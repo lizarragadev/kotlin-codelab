@@ -46,12 +46,6 @@ public class MainActivity extends AppCompatActivity {
         String[] arrayCP = resources.getStringArray(R.array.cp);
         TypedArray arrayImgs = resources.obtainTypedArray(R.array.photo);
         for(int i=0; i < arrayName.length; i++) {
-            Pokemon poke = new Pokemon(
-                    arrayName[i],
-                    Integer.parseInt(arrayCP[i]),
-                    arrayImgs.getResourceId(i, -1)
-            );
-            list.add(poke);
-        }
+         }
     }
 }

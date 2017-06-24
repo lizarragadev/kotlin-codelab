@@ -1,7 +1,7 @@
 package com.miramicodigo.pokekotlin
 
+import android.content.res.TypedArray
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -12,7 +12,7 @@ import java.util.ArrayList
 class MainKtActivity : AppCompatActivity() {
 
     lateinit var adapter : MyKtAdapter
-    lateinit var list : List<PokemonKt>
+    lateinit var list : ArrayList<PokemonKt>
     lateinit var layoutManager : RecyclerView.LayoutManager
     lateinit var recyclerView : RecyclerView
 
@@ -31,11 +31,16 @@ class MainKtActivity : AppCompatActivity() {
     }
 
     fun populateList() {
-        val po1 : PokemonKt = PokemonKt()
-        po1.name = resources.getString(R.string.main_pk1_titulo)
-        po1.cp = resources.getString(R.string.main_pk1_subtitulo)
+        var arrayName : Array<String> = resources.getStringArray(R.array.name)
+        var arrayCP : Array<String> = resources.getStringArray(R.array.cp)
+        var arrayImgs: TypedArray = resources.obtainTypedArray(R.array.photo)
 
-        list = listOf(po1)
+        list = ArrayList<PokemonKt>()
+
+        for (i in arrayName.indices) {
+            var poke : PokemonKt = PokemonKt(arrayName[i], arrayCP[i], arrayImgs.getResourceId(i, -1))
+            list.add(poke)
+        }
     }
 
 }

@@ -6,8 +6,5 @@ import android.graphics.drawable.Drawable
  * Created by gusn8 on 23-06-17.
  */
 
-class PokemonKt {
-    var name : String = ""
-    var cp : String = ""
-    var photo : Int = 0
+class PokemonKt constructor(var name : String, var cp : String, var photo : Int){
 }
