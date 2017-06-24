@@ -67,7 +67,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
                     int posicion = getAdapterPosition();
                     Toast.makeText(v.getContext(), "Mensaje", Toast.LENGTH_SHORT).show();
                     //Intent intent = new Intent(context, DetalleActivity.class);
-                    //intent.putExtra("poke", items.get(posicion));
+                        //intent.putExtra("poke", items.get(posicion));
                     //context.startActivity(intent);
                 }
             });
